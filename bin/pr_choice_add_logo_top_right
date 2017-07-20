@@ -1,2 +1,5 @@
 
+echo "Still in development"
+exit 1
+
 LOGO=$LOGO_LOCATION
