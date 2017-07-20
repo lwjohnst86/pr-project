@@ -1,0 +1,17 @@
+#!/bin/sh
+
+CLIENT_DIR=${client_folder}
+
+mkdir ${CLIENT_DIR}/Photos Documents
+mkdir ${CLIENT_DIR}/Photos/{photographer-selection,client-choice}
+touch ${CLIENT_DIR}/Photos/photographer-selection/photo-numbers-from-raw.txt
+mkdir ${CLIENT_DIR}/Photos/photographer-selection/{raw,proofs,logo} # Keep logo?
+
+mkdir ${CLIENT_DIR}/Photos/client-choice/{raw,with-logo,full-res}
+mkdir ${CLIENT_DIR}/Photos/client-choice/raw/{bottom-right,bottom-left,top-right,top-left}
+touch ${CLIENT_DIR}/Photos/client-choice/photo-numbers-from-selection.txt
+touch ${CLIENT_DIR}/Photos/client-choice/photo-numbers-for-branding.txt
+
+cp $TEMPLATE_FOLDER/Contract Documents/
+cp $TEMPLATE_FOLDER/Model-Release-Form Documents/
+touch Documents/visioning
