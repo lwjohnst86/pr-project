@@ -1,38 +1,50 @@
 #!/bin/sh
+# Installs the programs used for doing photography client work
+# (aka for Phoenix Rising)
 
-echo "This project is not complete, can't install anything!"
-exit 1
+echo "NOTE: This project is in development, so may not work as expected!"
 
-# create a folder called bin
-mkdir ~/bin/
+# Create a folder called bin.
+mkdir -p ~/bin/
 
-symlink all pr_* files into ~/bin/ folder.
-rename all pr_* files so there is not a file extension
+# Make a link of the commands into the bin folder.
+command_folder=$(dirname "$0")
+ln -sf ${command_folder}/*.sh ~/bin/
 
-chmod all files to 744
+# TODO? Rename so commands don't have sh?
 
+# Make it so these commands can be executed.
+find ~/bin/ -iname "pr_*" -exec chmod 744 {} \;
 
-# Create a config file
+# Put the bin on the search PATH
+if [ -f ~/.profile ]; then
+    if ! grep -Fxq 'PATH=$PATH:~/bin' ~/.profile
+    then
+        echo 'PATH=$PATH:~/bin' >> ~/.profile
+    fi
+else
+    echo 'PATH=$PATH:~/bin' >> ~/.profile
+fi
 
-config_file=.pr_config.txt
+# Check if the config file already exists.
+config_file=~/.pr_config.txt
+if [ -f $config_file ]; then
+    echo "The $config_file already exists, not creating a new one."
+    exit 1
+fi
 
-if file exists $config_file
-then echo this file already exists
-exit 1
+# Create a config file with the necessary contents.
+cat > $config_file <<EOF
+## This file tells pr_ type commands to use these folders
 
-cat > $proj_dir/.gitignore <<EOF
-## This file tells git to ignore the following files and folders:
-*~
-.~*
-output/
-figure/
-auto/
-*.el
-*.tex
+# Type out the filepath where you want the new client folders to be created in
+# (for instance, in the external hard drive)
+client_folder=
+
+# Where all the template files (logos, contracts, model release, etc) are located.
+template_folder=
+
+# Where to put the photos for branding purposes.
+branding_folder=
+
 EOF
-
-have a .pr_config.txt file
-- to indicate which directory to create the files in (Locura, etc)
-- where to keep branding, etc
-- where template files are (logo, etc)
-
