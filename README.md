@@ -15,7 +15,7 @@ these programs, open up a terminal and run these commands:
 git clone https://github.com/lwjohnst86/pr-project.git ~/pr-project 
 
 # install it!
-sh ~/pr-project/pr_install.sh
+sh ~/pr-project/bin/pr_install.sh
 ```
 
 # Usage
