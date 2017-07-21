@@ -49,4 +49,32 @@ pr_update_program
 For any new client, you'll want to run the `pr_new_client` command. This will 
 create a new folder with the following folders and files:
 
-{{create file tree here}}
+## How your new project will look like
+
+This is how the new project folders and files will look like.
+
+```
+JimmyTimmy/
+├── Documents/
+└── Photos/
+    ├── client-choice/
+    │   ├── full-res/
+    │   ├── raw/
+    │   │   ├── bottom-left/
+    │   │   ├── bottom-right/
+    │   │   ├── top-left/
+    │   │   └── top-right/
+    │   ├── with-logo/
+    │   │   ├── bottom-left/
+    │   │   ├── bottom-right/
+    │   │   ├── top-left/
+    │   │   └── top-right/
+    │   ├── photo-numbers-for-branding.txt
+    │   └── photo-numbers-from-selection.txt
+    └── photographer-selection/
+        ├── logo/
+        ├── proofs/
+        └── raw/
+```
+
+<!-- use: tree filepath/ -avFn --dirsfirst > file_structure.txt -->
