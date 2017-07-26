@@ -2,12 +2,8 @@
 
 echo "Still in development"
 
-# Check to see if the config file exists and load it if it is.
-if [ ! -f ~/.pr_config.txt ]; then
-    echo "Your configuration file is missing! Ask for help :)"
-else
-    . ~/.pr_config.txt
-fi
+# Load the config file.
+pr_config_load
 
 # TODO: check if master directory, etc of the config variables exist
 
