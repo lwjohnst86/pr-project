@@ -26,25 +26,4 @@ else
     echo 'PATH=$PATH:~/bin' >> ~/.profile
 fi
 
-# Check if the config file already exists.
-config_file=~/.pr_config.txt
-if [ -f $config_file ]; then
-    echo "The $config_file already exists, not creating a new one."
-    exit 1
-fi
-
-# Create a config file with the necessary contents.
-cat > $config_file <<EOF
-## This file tells pr_ type commands to use these folders
-
-# Type out the filepath where you want the new client folders to be created in
-# (for instance, in the external hard drive)
-client_folder=
-
-# Where all the template files (logos, contracts, model release, etc) are located.
-template_folder=
-
-# Where to put the photos for branding purposes.
-branding_folder=
-
-EOF
+sh $command_folder/pr_config_create.sh
