@@ -1,4 +1,10 @@
 #!/bin/sh
+#
+# Creates a new folder structure with template files for a new client.
+#
+# Usage:
+#
+#   pr_new_client
 
 echo "Still in development"
 
@@ -34,12 +40,11 @@ mkdir $new_client/Photos/client-choice/with-logo/bottom-right
 mkdir $new_client/Photos/client-choice/with-logo/bottom-left
 mkdir $new_client/Photos/client-choice/with-logo/top-right
 mkdir $new_client/Photos/client-choice/with-logo/top-left
-touch $new_client/Photos/client-choice/photo-numbers-from-selection.txt
-touch $new_client/Photos/client-choice/photo-numbers-for-branding.txt
+touch $new_client/Photos/client-choice/photo-numbers-from-selection.csv
+touch $new_client/Photos/client-choice/photo-numbers-for-branding.csv
 
 # Move the template files (contract, release form, etc) into the Document folder.
-# TODO: check if contract and model release files exist.
-# TODO: confirm that contract and release form are docx files
+# TODO: confirm with Vero that contract and release form are docx files
 contract=$template_folder/Contract.docx
 release_form=$template_folder/Model-Release-Form.docx
 if [ ! -f $contract ]; then
