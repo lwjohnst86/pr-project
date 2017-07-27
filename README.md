@@ -24,17 +24,15 @@ The following commands are found in the pr-projects program (with more detail
 about them in the next section)
 
 - `pr_new_client`: Create a folder and file structure for a new client.
-- `pr_move_to_selection`: Move the photographer selected photos into the `Photos/selection/raw/` folder.
 - `pr_selection_add_proof`: Add a watermark to the photos to indicate they are
 proofs before sending to client for them to choose their picks.
-- `pr_move_to_choice`: Move the clients chosen photos into the
-`Photos/choice/raw/` folder.
+- `pr_move_to_choice`: Move the clients chosen photos into the `Photos/choice/raw/` folder.
 - `pr_choice_add_logo_*` range of commands: Add the logo of the company to the
 `bottom_right`, `bottom_left`, `top_right`, and `top_left` corners of the chosen
 photos.
 - `pr_move_to_branding`: Move the photographers chosen photos (from the
 `choice/` or `selection/` photos) into the master company folder for
-branding/marketing purposes.
+branding/marketing purposes. <!-- TODO confirm this -->
 - `pr_client_finished`: Once the contract has been completed, package and
 compress the client folder to archive.
 
