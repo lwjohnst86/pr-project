@@ -47,14 +47,15 @@ pr_update_program
 For any new client, you'll want to run the `pr_new_client` command. This will 
 create a new folder with the following folders and files:
 
-## How your new project will look like
-
-This is how the new project folders and files will look like.
-
 ```
 JimmyTimmy/
 ├── Documents/
+│   ├── Contract.docx
+│   ├── Model-Release-Form.docx
+│   └── Visioning.txt
 └── Photos/
+    ├── logo/
+    │   ├── logo.png
     ├── client-choice/
     │   ├── full-res/
     │   ├── raw/
@@ -67,12 +68,29 @@ JimmyTimmy/
     │   │   ├── bottom-right/
     │   │   ├── top-left/
     │   │   └── top-right/
-    │   ├── photo-numbers-for-branding.txt
-    │   └── photo-numbers-from-selection.txt
-    └── photographer-selection/
-        ├── logo/
-        ├── proofs/
-        └── raw/
+    │   ├── photo-numbers-for-branding.csv
+    │   └── photo-numbers-from-selection.csv
+    ├── photographer-selection/
+    │   ├── proofs/
+    │   └── raw/
+    └── raw/
+
+```
+<!-- use: tree filepath/ -avFn --dirsfirst > file_structure.txt -->
+
+Next you would use the command `pr_move_to_choice path/to/JimmyTimmy`. I would 
+recommend in the terminal to first run this command:
+
+```bash
+cd path/to/ClientName/
 ```
 
-<!-- use: tree filepath/ -avFn --dirsfirst > file_structure.txt -->
+Then you can run all of the commands using simply `./`. For instance:
+
+```bash
+pr_move_to_choice ./
+```
+
+This command takes the photo numbers the client has chosen (found in the
+`photo-numbers-from-selection.csv` file; each set of numbers must be separated
+by a comma and on only one line).
