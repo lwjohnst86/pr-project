@@ -54,8 +54,6 @@ JimmyTimmy/
 │   ├── Model-Release-Form.docx
 │   └── Visioning.txt
 └── Photos/
-    ├── logo/
-    │   ├── logo.png
     ├── client-choice/
     │   ├── full-res/
     │   ├── raw/
@@ -70,6 +68,8 @@ JimmyTimmy/
     │   │   └── top-right/
     │   ├── photo-numbers-for-branding.csv
     │   └── photo-numbers-from-selection.csv
+    ├── logo/
+    │   └── logo.png
     ├── photographer-selection/
     │   ├── proofs/
     │   └── raw/
