@@ -8,7 +8,7 @@
 #
 echo "Note: Still in development"
 
-pr_config_load
+sh ~/bin/pr_config_load.sh
 
 if [ ! -d "$install_folder" ]; then
     echo "$install_folder does not exist, did you move the pr-project folder maybe?"

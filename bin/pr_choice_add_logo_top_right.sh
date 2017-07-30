@@ -17,7 +17,7 @@ if [ ! -d $client_folder]; then
 fi
 
 # Load the config file.
-pr_config_load
+sh ~/bin/pr_config_load.sh
 
 echo "Adding a logo to $(basename $client_folder)'s chosen photos."
 

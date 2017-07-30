@@ -9,7 +9,7 @@
 echo "Still in development"
 
 # Load the config file.
-pr_config_load
+sh ~/bin/pr_config_load.sh
 
 # TODO: check if master directory, etc of the config variables exist
 
