@@ -9,7 +9,6 @@
 #   pr_choice_add_logo_top_right path/to/ClientName
 #
 echo "Still in development"
-exit 1
 
 client_folder=$1
 if [ ! -d $client_folder]; then
