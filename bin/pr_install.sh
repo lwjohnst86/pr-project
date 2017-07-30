@@ -1,8 +1,11 @@
 #!/bin/sh
 # Installs the programs used for doing photography client work
-# (aka for Phoenix Rising)
-
-echo "NOTE: This project is in development, so may not work as expected!"
+# (aka for Phoenix Rising).
+#
+# Usage:
+#   sh ~/pr-project/bin/pr_install.sh
+#
+echo "NOTE: This project is still in development, so may not work as expected!"
 
 # Create a folder called bin.
 mkdir -p ~/bin/
@@ -21,9 +24,14 @@ if [ -f ~/.profile ]; then
     if ! grep -Fxq 'PATH=$PATH:~/bin' ~/.profile
     then
         echo 'PATH=$PATH:~/bin' >> ~/.profile
+        echo "Please close and reopen your terminal."
     fi
 else
     echo 'PATH=$PATH:~/bin' >> ~/.profile
+    echo "Please close and reopen your terminal."
 fi
 
 sh $command_folder/pr_config_create.sh
+
+echo "# Location of the installed git repo
+install_folder=$command_folder" >> ~/.pr_config.txt
