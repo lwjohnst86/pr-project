@@ -12,4 +12,5 @@ if [ ! -f ~/.pr_config.txt ]; then
 else
     # Loads the options in the config file.
     . ~/.pr_config.txt
+    echo "Loading the configurations file."
 fi
