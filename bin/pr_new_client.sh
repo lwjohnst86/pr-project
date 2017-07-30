@@ -9,7 +9,7 @@
 echo "Still in development"
 
 # Load the config file.
-sh ~/bin/pr_config_load.sh
+. ~/bin/pr_config_load.sh
 
 # TODO: check if master directory, etc of the config variables exist
 
@@ -19,7 +19,7 @@ read client_name
 
 # Create the folder directory structure.
 new_client=${client_folder}/${client_name}
-mkdir $new_client
+mkdir -v $new_client
 mkdir $new_client/Photos/
 mkdir $new_client/Documents/
 mkdir $new_client/Photos/raw
