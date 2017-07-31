@@ -6,32 +6,40 @@
 #
 # Usage:
 #
-#   pr_choice_add_logo_top_right path/to/ClientName
+#   pr_choice_add_logo_top_right ClientName
 #
-echo "Still in development"
 
-client_folder=$1
-if [ ! -d $client_folder]; then
-    echo "This folder $client_folder does not exist. Is there maybe a typo?"
+echo "Please type out the clients name (the folder name of the client)."
+echo "It should be without spaces."
+read client_name
+
+if [ -z "$client_name" ]; then
+    echo "No client name provided. Stopping."
     exit 1
 fi
 
 # Load the config file.
 . ~/bin/pr_config_load.sh
 
-echo "Adding a logo to $(basename $client_folder)'s chosen photos."
+client=$client_folder/$client_name
+if [ ! -d $client ]; then
+    echo "This folder $client does not exist. Is there maybe a typo in the name?"
+    exit 1
+fi
 
-raw_photos_folder=$client_folder/Photos/raw/top-right/
-with_logo_photos_folder=$client_folder/Photos/with-logo/top-right/
+echo "Adding a logo to ${client_name}'s chosen photos."
+
+orig_photos_folder=$client/Photos/low-res/top-right/
+with_logo_photos_folder=$client/Photos/with-logo/top-right/
 
 echo "NOTE: Cleaning out with-logo/top-right photos."
 rm $with_logo_photos_folder/*
 
-echo "Copying over all raw/top-right photos into with-logo/top-right folder."
-cp $raw_photos_folder/* $with_logo_photos_folder/
+echo "Copying over all low-res/top-right photos into with-logo/top-right folder."
+cp $orig_photos_folder/* $with_logo_photos_folder/
 
 # test if logo exists
-logo=$client_folder/Photos/logo/logo.png
+logo=$client/Photos/logo/logo.png
 
 if [ ! -f $logo ]; then
     echo "The logo file $logo does not exist. Make sure it is in the Photos/logo folder."
