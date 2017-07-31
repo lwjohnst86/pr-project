@@ -11,11 +11,23 @@ First step is to install [Git](https://git-scm.com/downloads). Then to install
 these programs, open up a terminal and run these commands:
 
 ```bash
-# download pr-projects
+# Download pr-projects
 git clone https://github.com/lwjohnst86/pr-project.git ~/pr-project 
 
 # install it!
 sh ~/pr-project/bin/pr_install.sh
+```
+
+Next, set up the configuration file. Open it by running this command for Mac OSX:
+
+```bash
+open -e ~/.pr_config.txt
+```
+
+Or in Linux:
+
+```bash
+nano ~/.pr_config.txt
 ```
 
 # Usage
