@@ -6,16 +6,17 @@
 #
 #   pr_new_client
 
-echo "Still in development"
-
-# Load the config file.
-. ~/bin/pr_config_load.sh
-
-# TODO: check if master directory, etc of the config variables exist
-
 # Get the name of the client to use as the base for the
 echo "What is the name of the client (no spaces). Recommended use is CamelCase (eg JimmyTimmy)."
 read client_name
+
+if echo $client_name | grep -E '[ "]' >/dev/null; then
+  echo "There are spaces in the name. Stopping."
+  exit 1
+fi
+
+# Load the config file.
+. ~/bin/pr_config_load.sh
 
 # Create the folder directory structure.
 new_client=${client_folder}/${client_name}
