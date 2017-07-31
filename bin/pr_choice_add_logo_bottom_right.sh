@@ -39,7 +39,7 @@ echo "Copying over all low-res/bottom-right photos into with-logo/bottom-right f
 cp $orig_photos_folder/* $with_logo_photos_folder/
 
 # test if logo exists
-logo=$client_folder/Photos/logo/logo.png
+logo=$client/Photos/logo/logo.png
 
 if [ ! -f $logo ]; then
     echo "The logo file $logo does not exist. Make sure it is in the Photos/logo folder."
