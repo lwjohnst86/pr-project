@@ -6,8 +6,8 @@
 #
 #   pr_update_program
 #
-echo "Note: Still in development"
 
+# Load config file.
 . ~/bin/pr_config_load.sh
 
 if [ ! -d "$install_folder" ]; then
