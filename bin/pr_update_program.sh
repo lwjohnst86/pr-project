@@ -17,7 +17,7 @@ fi
 
 git -C $install_folder pull origin master
 # Need to update pr_* symbolic links?
-find ~/bin/ -iname "pr_*" -exec chmod 744 {} \;
+find ~/bin/ -iname "pr_*" -exec chmod 766 {} \;
 
 # TODO: Use tags? newest_tag=$(git describe --tags)
 #echo Using the latest release ${newest_tag}
