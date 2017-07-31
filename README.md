@@ -91,19 +91,50 @@ JimmyTimmy/
 ```
 <!-- use: tree filepath/ -avFn --dirsfirst > file_structure.txt -->
 
-Next you would use the command `pr_move_to_choice path/to/JimmyTimmy`. I would 
-recommend in the terminal to first run this command:
+See the section "Description of each folder" for more details about each of the
+folders and specific actions to take for them.
 
-```bash
-cd path/to/ClientName/
-```
-
-Then you can run all of the commands using simply `./`. For instance:
-
-```bash
-pr_move_to_choice ./
-```
+Next you would use the command `pr_move_to_choice`. I would recommend in the
+terminal to first run this command:
 
 This command takes the photo numbers the client has chosen (found in the
 `photo-numbers-from-selection.csv` file; each set of numbers must be separated
 by a comma and on only one line).
+
+## Description of each folder:
+
+- Under `Photos/`:
+    - `raw/`: The folder with all photos taken from the session or sessions of a
+    specific contract (create a new client folder if a client comes for other
+    sessions after the contract has completed). Photographer selects photos
+    they think are the best for the client and copies them into
+    `photographer-selection/raw/`.
+    - `photographer-selection/`:
+        - `raw/`: All photos that the photographer chooses from the `raw/`
+        that will be sent to the client for final choices. When you run the
+        `pr_selection_add_proof` command, the photos in this folder will be
+        copied into the `proofs/` folder and a proof mark is added to those
+        photos.
+        - `proofs/`: These are photos with a watermark "proof" photos to be sent
+        to the client to make their final choice. The photos in this folder
+        temporary/non-permanent. Everytime `pr_selection_add_proof` command is
+        run, these photos *get deleted*.
+    - `client-choice/`: These are the photos that were chosen by the client from
+    the selection that the photographer decided on.
+        - `raw/`: Photos that were chosen from the client and moved over from
+        the `photographer-selection/raw/`. From here, photos are opened up in
+        [RawTherapee](http://rawtherapee.com/), edited, and saved over into the
+        `full-res/` folder.
+        - `full-res/`: Contains the edited photos that will eventually be sent
+        to the client and also converted into social media form with a logo
+        attached.
+        - `low-res/`: Files from `full-res` are converted into a smaller form
+        (~2048 pixels length wise) using `pr_choice_convert_lowres` and moved to
+        this folder. From here they are moved into either `bottom-right/`,
+        `top-left/`, etc folders depending on where the logo will go.
+        - `with-logo/`: Using the `pr_choice_add_*` series of commands, move the
+        `low-res/` photos into the their respective logo position folder and a
+        logo is added to that corner of the photo (e.g. bottom right corner for
+        `bottom-right/` folder).
+    - `logo/` folder contains the logo.png file to add to the photos.
+
