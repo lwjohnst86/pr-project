@@ -30,12 +30,13 @@ mkdir $new_client/Photos/photographer-selection/raw
 mkdir $new_client/Photos/photographer-selection/proofs
 
 mkdir $new_client/Photos/client-choice
-mkdir $new_client/Photos/client-choice/full-res
 mkdir $new_client/Photos/client-choice/raw
-mkdir $new_client/Photos/client-choice/raw/bottom-right
-mkdir $new_client/Photos/client-choice/raw/bottom-left
-mkdir $new_client/Photos/client-choice/raw/top-right
-mkdir $new_client/Photos/client-choice/raw/top-left
+mkdir $new_client/Photos/client-choice/full-res
+mkdir $new_client/Photos/client-choice/low-res
+mkdir $new_client/Photos/client-choice/low-res/bottom-right
+mkdir $new_client/Photos/client-choice/low-res/bottom-left
+mkdir $new_client/Photos/client-choice/low-res/top-right
+mkdir $new_client/Photos/client-choice/low-res/top-left
 mkdir $new_client/Photos/client-choice/with-logo
 mkdir $new_client/Photos/client-choice/with-logo/bottom-right
 mkdir $new_client/Photos/client-choice/with-logo/bottom-left
