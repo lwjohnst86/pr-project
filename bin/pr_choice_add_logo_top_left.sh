@@ -46,4 +46,5 @@ if [ ! -f $logo ]; then
 fi
 
 # Add the logo
-mogrify -gravity northwest -draw "image over 0,10 0,0 $logo" $with_logo_photos_folder/*.jpg
+# need to cd to the directory (to fix a weird bug).
+(cd $client && mogrify -gravity northwest -draw "image over 0,10 0,0 Photos/logo/logo.png" $with_logo_photos_folder/*)
