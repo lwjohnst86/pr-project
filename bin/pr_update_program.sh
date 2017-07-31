@@ -15,6 +15,7 @@ if [ ! -d "$install_folder" ]; then
     exit 1
 fi
 
+git -C $install_folder reset --hard HEAD
 git -C $install_folder pull origin master
 # Need to update pr_* symbolic links?
 find ~/bin/ -iname "pr_*" -exec chmod 766 {} \;
