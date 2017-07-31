@@ -17,7 +17,7 @@ ln -sf ${command_folder}/*.sh ~/bin/
 # TODO? Rename so commands don't have sh?
 
 # Make it so these commands can be executed.
-find ~/bin/ -iname "pr_*" -exec chmod 744 {} \;
+find ~/bin/ -iname "pr_*" -exec chmod 766 {} \;
 
 # Put the bin on the search PATH
 if [ -f ~/.profile ]; then
