@@ -29,8 +29,8 @@ fi
 
 echo "Adding a logo to ${client_name}'s chosen photos."
 
-orig_photos_folder=$client/Photos/low-res/bottom-left
-with_logo_photos_folder=$client/Photos/with-logo/bottom-left
+orig_photos_folder=$client/Photos/client-choice/low-res/bottom-left
+with_logo_photos_folder=$client/Photos/client-choice/with-logo/bottom-left
 
 echo "NOTE: Cleaning out with-logo/bottom-left photos."
 find $with_logo_photos_folder -iname "*" -type f -delete
