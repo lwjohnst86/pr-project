@@ -29,11 +29,11 @@ fi
 
 echo "Adding a logo to ${client_name}'s chosen photos."
 
-orig_photos_folder=$client/Photos/low-res/top-left/
-with_logo_photos_folder=$client/Photos/with-logo/top-left/
+orig_photos_folder=$client/Photos/low-res/top-left
+with_logo_photos_folder=$client/Photos/with-logo/top-left
 
 echo "NOTE: Cleaning out with-logo/top-left photos."
-rm $with_logo_photos_folder/*
+find $with_logo_photos_folder -iname "*" -type f -delete
 
 echo "Copying over all low-res/top-left photos into with-logo/top-left folder."
 cp $orig_photos_folder/* $with_logo_photos_folder/
