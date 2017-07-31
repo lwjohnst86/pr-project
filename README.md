@@ -68,11 +68,12 @@ JimmyTimmy/
 └── Photos/
     ├── client-choice/
     │   ├── full-res/
-    │   ├── raw/
+    │   ├── low-res/
     │   │   ├── bottom-left/
     │   │   ├── bottom-right/
     │   │   ├── top-left/
     │   │   └── top-right/
+    │   ├── raw/
     │   ├── with-logo/
     │   │   ├── bottom-left/
     │   │   ├── bottom-right/
