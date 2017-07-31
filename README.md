@@ -1,5 +1,5 @@
 
-> WARNING: This project is in development, code may not run. Please wait until a released version is created.
+> NOTE: This project is still in development, code may not run. Please wait until a released version is created.
 
 # pr-project: Commands to streamline Phoenix Rising projects
 
