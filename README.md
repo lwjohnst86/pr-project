@@ -7,8 +7,10 @@ These commands are to help manage photography projects for [Phoenix Rising](http
 
 # Installation
 
-First step is to install [Git](https://git-scm.com/downloads). Then to install
-these programs, open up a terminal and run these commands:
+First step is to install [Git](https://git-scm.com/downloads), `rename` (paste
+and run this command in the terminal: `brew install rename`), and `imagemagick`
+(paste this in the terminal `brew install imagemagick`). Then to install these
+programs, open up a terminal and run these commands:
 
 ```bash
 # Download pr-projects
