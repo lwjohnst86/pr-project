@@ -19,6 +19,7 @@ git -C $install_folder reset --hard HEAD
 git -C $install_folder pull origin master
 # Need to update pr_* symbolic links?
 find ~/bin/ -iname "pr_*" -exec chmod 766 {} \;
+find ~/bin/ -iname "pr_*" -exec rename 's/\.sh$//' {} \;
 
 # TODO: Use tags? newest_tag=$(git describe --tags)
 #echo Using the latest release ${newest_tag}
