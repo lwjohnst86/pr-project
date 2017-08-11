@@ -18,6 +18,7 @@ ln -sf ${command_folder}/*.sh ~/bin/
 
 # Make it so these commands can be executed.
 find ~/bin/ -iname "pr_*" -exec chmod 766 {} \;
+find ~/bin/ -iname "pr_*" -exec rename 's/\.sh$//' {} \;
 
 # Put the bin on the search PATH
 if [ -f ~/.profile ]; then
