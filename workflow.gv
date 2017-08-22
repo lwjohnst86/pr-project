@@ -1,0 +1,21 @@
+digraph {
+    graph [overlap = compress]
+    node [style = rounded, shape = box]
+
+    TakePhotos -> PhotoRaw [label = "  pr_new_client"]
+    PhotoRaw -> SelectionRaw [label = "  Move (self)"]
+    SelectionRaw -> SelectionProofs [headlabel = "  pr_selection_add_proof", labeldistance = 6.5, labelangle = 95]
+    {
+        rank = same;
+        SelectionProofs ChoiceRaw
+    }
+
+    SelectionProofs -> PhotoNumbers
+    PhotoNumbers -> ChoiceRaw [splines = curve]
+    SelectionRaw -> ChoiceRaw [label = "  pr_move_to_choice"]
+    ChoiceRaw -> ChoiceFullRes -> CornerFolders [label = "  Edit and move"]
+    CornerFolders -> ChoiceWithLogo [label = "  pr_choice_add_logo"]
+    pr_client_finished [shape = none]
+    ChoiceWithLogo -> pr_client_finished
+
+}

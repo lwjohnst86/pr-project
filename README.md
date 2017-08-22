@@ -98,7 +98,11 @@ This command takes the photo numbers the client has chosen (found in the
 `photo-numbers-from-selection.csv` file; each set of numbers must be separated
 by a comma and on only one line).
 
-## Description of each folder:
+# Workflow description
+
+![Simple illustration of workflow and the commands for each step](workflow.png)
+
+## Description of each folder for workflow:
 
 - Under `Photos/`:
     - `raw/`: The folder with all photos taken from the session or sessions of a
