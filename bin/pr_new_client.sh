@@ -37,10 +37,6 @@ mkdir $new_client/Photos/client-choice/full-res/bottom-left
 mkdir $new_client/Photos/client-choice/full-res/top-right
 mkdir $new_client/Photos/client-choice/full-res/top-left
 mkdir $new_client/Photos/client-choice/with-logo
-mkdir $new_client/Photos/client-choice/with-logo/bottom-right
-mkdir $new_client/Photos/client-choice/with-logo/bottom-left
-mkdir $new_client/Photos/client-choice/with-logo/top-right
-mkdir $new_client/Photos/client-choice/with-logo/top-left
 touch $new_client/Photos/client-choice/photo-numbers-from-selection.csv
 touch $new_client/Photos/client-choice/photo-numbers-for-branding.csv
 
