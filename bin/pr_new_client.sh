@@ -16,7 +16,7 @@ if echo $client_name | grep -E '[ "]' >/dev/null; then
 fi
 
 # Load the config file.
-. ~/bin/pr_config_load.sh
+. ~/bin/pr_config_load*
 
 # Create the folder directory structure.
 new_client=${client_folder}/${client_name}
