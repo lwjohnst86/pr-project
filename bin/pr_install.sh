@@ -5,7 +5,6 @@
 # Usage:
 #   sh ~/pr-project/bin/pr_install.sh
 #
-echo "NOTE: This project is still in development, so may not work as expected!"
 
 # Create a folder called bin.
 mkdir -p ~/bin/
