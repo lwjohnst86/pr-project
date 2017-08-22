@@ -6,7 +6,7 @@
 usage() {
     echo "
     Arguments: $0
-        -n Client name, without spaces.
+        -n Client name, without spaces. (Required)
         -d Delete output folder. Either true or false. Default is true.
         " 1>&2
     exit 1
@@ -79,5 +79,3 @@ do
         (cd $input_folder && pr_utility_shrink_add_logo -i ./ -o $output -c $logo_corner -r $resolution -l $logo)
     done
 done
-
-
