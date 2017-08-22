@@ -28,7 +28,7 @@ client_folder=
 # Where all the template files (logos, contracts, model release, etc) are located.
 template_folder=
 
-# Where to put the photos for branding purposes.
-branding_folder=
+# Where to put the photos for social media purposes.
+social_media_folder=
 
 EOF

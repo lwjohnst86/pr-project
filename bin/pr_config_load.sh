@@ -29,8 +29,8 @@ if [ -z "$template_folder" ]; then
     exit 1
 fi
 
-if [ -z "$branding_folder" ]; then
-    echo "branding_folder option is not set in the .pr_config.txt file."
+if [ -z "$social_media_folder" ]; then
+    echo "social_media_folder option is not set in the .pr_config.txt file."
     echo "Please fill it out."
     exit 1
 fi
