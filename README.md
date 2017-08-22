@@ -41,10 +41,10 @@ about them in the next section)
 - `pr_selection_add_proof`: Add a watermark to the photos to indicate they are
 proofs before sending to client for them to choose their picks.
 - `pr_move_to_choice`: Move the clients chosen photos into the `Photos/choice/raw/` folder.
-- `pr_choice_add_logo_*` range of commands: Add the logo of the company to the
+- `pr_choice_add_logo`: Shrinks and adds the logo of the company to the 
 `bottom_right`, `bottom_left`, `top_right`, and `top_left` corners of the chosen
 photos.
-- `pr_move_to_branding`: Move the photographers chosen photos (from the
+- `pr_move_to_socialmedia`: Move the photographers chosen photos (from the
 `choice/` or `selection/` photos) into the master company folder for
 branding/marketing purposes. <!-- TODO confirm this -->
 - `pr_client_finished`: Once the contract has been completed, package and
@@ -70,17 +70,12 @@ JimmyTimmy/
 └── Photos/
     ├── client-choice/
     │   ├── full-res/
-    │   ├── low-res/
     │   │   ├── bottom-left/
     │   │   ├── bottom-right/
     │   │   ├── top-left/
     │   │   └── top-right/
     │   ├── raw/
     │   ├── with-logo/
-    │   │   ├── bottom-left/
-    │   │   ├── bottom-right/
-    │   │   ├── top-left/
-    │   │   └── top-right/
     │   ├── photo-numbers-for-branding.csv
     │   └── photo-numbers-from-selection.csv
     ├── logo/
@@ -129,14 +124,17 @@ by a comma and on only one line).
         `full-res/` folder.
         - `full-res/`: Contains the edited photos that will eventually be sent
         to the client and also converted into social media form with a logo
-        attached.
+        attached. Which corner the logo will be put in is decided by moving the
+        photos into their respective corner folder (`bottom-right`,
+        `bottom-left`, `top-right`, `top-left`).
         - `low-res/`: Files from `full-res` are converted into a smaller form
         (~2048 pixels length wise) using `pr_choice_convert_lowres` and moved to
         this folder. From here they are moved into either `bottom-right/`,
         `top-left/`, etc folders depending on where the logo will go.
-        - `with-logo/`: Using the `pr_choice_add_*` series of commands, move the
-        `low-res/` photos into the their respective logo position folder and a
-        logo is added to that corner of the photo (e.g. bottom right corner for
-        `bottom-right/` folder).
+        - `with-logo/`: Using the `pr_choice_add_logo` command, moves all
+        `full-res/` photos into the `with-logo/` folder, shrinking them to about
+        2048 pixels on the longest side, and adds a logo on the corner dictated
+        by which folder the photo is found in (e.g. logo on bottom right for
+        photos in the `bottom-right/` folder.)
     - `logo/` folder contains the logo.png file to add to the photos.
 
