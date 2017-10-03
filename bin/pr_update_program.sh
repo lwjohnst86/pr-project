@@ -15,11 +15,15 @@ if [ ! -d "$install_folder" ]; then
     exit 1
 fi
 
+# Update from the GitHub repo
 git -C $install_folder reset --hard HEAD
 git -C $install_folder pull origin master
-# Need to update pr_* symbolic links?
-find ~/bin/ -iname "pr_*" -exec chmod 766 {} \;
-find ~/bin/ -iname "pr_*" -exec rename 's/\.sh$//' {} \;
+
+# Remove left over pr_* commands
+find ~/bin/ -iname "pr_*" -delete
+
+find ${install_folder}/ -iname "pr_*" -exec chmod 766 {} \;
+ln -sf ${install_folder}/pr_* ~/bin/
 
 # TODO: Use tags? newest_tag=$(git describe --tags)
 #echo Using the latest release ${newest_tag}
