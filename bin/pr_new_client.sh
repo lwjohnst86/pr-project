@@ -29,16 +29,16 @@ mkdir $new_client/Photos/photographer-selection
 mkdir $new_client/Photos/photographer-selection/raw
 mkdir $new_client/Photos/photographer-selection/proofs
 
-mkdir $new_client/Photos/client-choice
-mkdir $new_client/Photos/client-choice/raw
-mkdir $new_client/Photos/client-choice/full-res
-mkdir $new_client/Photos/client-choice/full-res/bottom-right
-mkdir $new_client/Photos/client-choice/full-res/bottom-left
-mkdir $new_client/Photos/client-choice/full-res/top-right
-mkdir $new_client/Photos/client-choice/full-res/top-left
-mkdir $new_client/Photos/client-choice/with-logo
-touch $new_client/Photos/client-choice/photo-numbers-from-selection.csv
-touch $new_client/Photos/client-choice/photo-numbers-for-branding.csv
+mkdir $new_client/Photos/final-choice
+mkdir $new_client/Photos/final-choice/raw
+mkdir $new_client/Photos/final-choice/full-res
+mkdir $new_client/Photos/final-choice/full-res/bottom-right
+mkdir $new_client/Photos/final-choice/full-res/bottom-left
+mkdir $new_client/Photos/final-choice/full-res/top-right
+mkdir $new_client/Photos/final-choice/full-res/top-left
+mkdir $new_client/Photos/final-choice/with-logo
+touch $new_client/Photos/final-choice/photo-numbers-from-selection.csv
+touch $new_client/Photos/final-choice/photo-numbers-for-branding.csv
 
 # Move the template files (contract, release form, etc) into the Document folder.
 # TODO: confirm with Vero that contract and release form are docx files

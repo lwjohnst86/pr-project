@@ -68,7 +68,7 @@ JimmyTimmy/
 │   ├── Model-Release-Form.docx
 │   └── Visioning.txt
 └── Photos/
-    ├── client-choice/
+    ├── final-choice/
     │   ├── full-res/
     │   │   ├── bottom-left/
     │   │   ├── bottom-right/
@@ -120,8 +120,9 @@ by a comma and on only one line).
         to the client to make their final choice. The photos in this folder
         temporary/non-permanent. Everytime `pr_selection_add_proof` command is
         run, these photos *get deleted*.
-    - `client-choice/`: These are the photos that were chosen by the client from
-    the selection that the photographer decided on.
+    - `final-choice/`: These are the photos that were chosen by the client from
+    the selection that the photographer decided on (or that the photographer
+    decides as final).
         - `raw/`: Photos that were chosen from the client and moved over from
         the `photographer-selection/raw/`. From here, photos are opened up in
         [RawTherapee](http://rawtherapee.com/), edited, and saved over into the
