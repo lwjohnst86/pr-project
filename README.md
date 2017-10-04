@@ -42,8 +42,10 @@ about them in the next section)
 proofs before sending to client for them to choose their picks.
 - `pr_move_to_choice`: Move the clients chosen photos into the `Photos/choice/raw/` folder.
 - `pr_choice_add_logo`: Shrinks and adds the logo of the company to the 
-`bottom_right`, `bottom_left`, `top_right`, and `top_left` corners of the chosen
-photos.
+`bottom-right`, `bottom-left`, `top-right`, and `top-left` corners of the chosen
+photos (based on which folder the photo is found in). **Note** that the images
+*must* be found in one of the corner folders the `Photos/final-choice/full-res/`
+and that the `logo.png` *must* be found in the `Photos/logo/` folder.
 - `pr_move_to_socialmedia`: Move the photographers chosen photos (from the
 `choice/` or `selection/` photos) into the master company folder for
 branding/marketing purposes. <!-- TODO confirm this -->
@@ -132,10 +134,6 @@ by a comma and on only one line).
         attached. Which corner the logo will be put in is decided by moving the
         photos into their respective corner folder (`bottom-right`,
         `bottom-left`, `top-right`, `top-left`).
-        - `low-res/`: Files from `full-res` are converted into a smaller form
-        (~2048 pixels length wise) using `pr_choice_convert_lowres` and moved to
-        this folder. From here they are moved into either `bottom-right/`,
-        `top-left/`, etc folders depending on where the logo will go.
         - `with-logo/`: Using the `pr_choice_add_logo` command, moves all
         `full-res/` photos into the `with-logo/` folder, shrinking them to about
         2048 pixels on the longest side, and adds a logo on the corner dictated
