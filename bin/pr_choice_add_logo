@@ -36,14 +36,14 @@ if [ ! -d $client ]; then
     usage
 fi
 
-input=$client/Photos/client-choice/full-res
-output=$client/Photos/client-choice/with-logo
+input=$client/Photos/final-choice/full-res
+output=$client/Photos/final-choice/with-logo
 
-if [ -z $delete_output -o $delete_output == "true" ]; then
+if [ -z "$delete_output" -o "$delete_output" = "true" ]; then
     find $output -iname "*" -type f -delete
 fi
 
-if [ ! -f $client/Photos/logo/logo.png ]; then
+if [ ! -f ${client}/Photos/logo/logo.png ]; then
     echo "Logo in Photos/logo/logo.png does not exist."
     exit 1
 fi
