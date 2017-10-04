@@ -70,12 +70,11 @@ do
 
         if [ $orientation_test -eq 1 ]; then
             # Landscape (=1)
-            resolution=x2048
+            resolution=2048X
         else
             # Portrait or square (=0)
-            resolution=2048x
+            resolution=X2048
         fi
-        logo=../../logo/logo.png
-        (cd $input_folder && pr_utility_shrink_add_logo -i ./ -o $output -c $logo_corner -r $resolution -l $logo)
+        (cd $input_folder && pr_utility_shrink_add_logo -i ./* -o $output -c $logo_corner -r $resolution)
     done
 done
