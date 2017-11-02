@@ -1,12 +1,56 @@
+#!/bin/sh
+#
+# Add a proof/watermark image to the photo
+#
 
-# Delete all photos in proof
-# Move selection raw into proof
-# add proof to the background
+usage() {
+    echo "
+    Arguments: $0
+        -n Client name, without spaces. (Required)
+        -d Delete output folder. Either true or false. Default is true.
+        " 1>&2
+    exit 1
+}
 
-echo "In development"
-exit 1
+while getopts ":n:hd" opt; do
+    case ${opt} in
+        n) client_name=${OPTARG}
+        ;;
+        d) delete_output=${OPTARG}
+        ;;
+        h|*) usage
+        ;;
+    esac
+done
 
-proofs=$client/Photos/photographer-selection/proofs
-rm -rf $proofs/*
+if [ -z "$client_name" ]; then
+    usage
+fi
 
-mogrify -p $proofs ... logo again?
+# Load the config file.
+. ~/bin/pr_config_load*
+
+client=$client_folder/$client_name
+if [ ! -d $client ]; then
+    echo "Folder $client does not exist."
+    usage
+fi
+
+input=$client/Photos/photographer-selection/raw
+output=$client/Photos/photographer-selection/proofs
+
+if [ -z "$delete_output" -o "$delete_output" = "true" ]; then
+    find $output -iname "*" -type f -delete
+fi
+
+logo=${client}/Photos/logo/logo.png
+if [ ! -f $logo ]; then
+    echo "Logo in Photos/logo/logo.png does not exist."
+    exit 1
+fi
+
+for image in $input/*
+do
+    composite -dissolve 25% -gravity center \( $logo -resize 800% \) $image $output/$(basename $image)
+done
+
