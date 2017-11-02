@@ -51,6 +51,8 @@ fi
 
 for image in $input/*
 do
-    composite -dissolve 25% -gravity center \( $logo -resize 300% \) \( $image -resize 25% \) $output/$(basename $image)
+    out_image=$output/$(basename $image)
+    convert -auto-orient -resize 25% $image $out_image
+    composite -dissolve 25% -gravity center \( $logo -resize 275% \) $out_image $out_image
 done
 
