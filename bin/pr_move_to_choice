@@ -1,4 +1,54 @@
+#!/bin/sh
+# 
+# Take each number from the photo-numbers-from-selection.csv file and copy those
+# photos (with corresponding number) from the photographer-selection/raw to
+# final-choice/raw.
 
-# Read in all numbers (as csv?)
-#  (see http://www.unix.com/shell-programming-and-scripting/31608-read-csv-file-assign-values-variable.html)
-# for each number, move the photo of that number from Photos/photographer-selection/raw into Photos/client-choice/raw
+usage() {
+    echo "
+    Arguments: $0
+        -n Client name, without spaces. (Required)
+        " 1>&2
+    exit 1
+}
+
+while getopts ":n:h" opt; do
+    case ${opt} in
+        n) client_name=${OPTARG}
+        ;;
+        h|*) usage
+        ;;
+    esac
+done
+
+if [ -z "$client_name" ]; then
+    usage
+fi
+
+# Load the config file.
+. ~/bin/pr_config_load*
+
+client=$client_folder/$client_name
+if [ ! -d $client ]; then
+    echo "Folder $client does not exist."
+    usage
+fi
+
+input=$client/Photos/photographer-selection/raw
+output=$client/Photos/final-choice/raw
+photo_list_file=$client/Photos/final-choice/photo-numbers-from-selection.csv
+
+if [ ! -f "$photo_list_file" ]; then
+    echo "$(basename $photo_list_file) does not exist."
+    echo 'Please add the photo numbers to the file and put in the final-choice/ folder.'
+    exit 1
+fi
+
+photo_list=$(sed -e 's/,/\n/g' $photo_list_file | sed -e 's|^|'"$input"'/*|' -e 's/$/*/')
+
+echo "Moving photos for ${client_name} over to final-choice..."
+
+cp -vf $photo_list -t $output
+
+echo "...Done."
+
