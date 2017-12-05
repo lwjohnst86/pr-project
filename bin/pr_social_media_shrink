@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# Shrink the photos in the social media raw folder to be Instagram size.
+#
+
+# Load the config file.
+. ~/bin/pr_config_load*
+
+if [ ! -d $social_media_folder -o -z "$social_media_folder" ]; then
+    echo "A social media folder does not exist or is not included in the .pr_config.txt file."
+    echo "Please create one if necessary and add it to the config file."
+fi
+
+input=$social_media_folder/raw
+output=$social_media_folder/shrunk
+
+if [ ! -d $input ]; then
+    echo "Folder $input does not exist. Creating it..."
+    mkdir $input
+    echo "... done. Add the photos you want to shrink into this folder."
+    echo "Then re-run this command."
+    exit 1
+fi
+
+if [ ! -d $output ]; then
+    mkdir $output
+fi
+
+for photos in $input/*
+do
+    # test if landscape (=1) or portrait/square (=0)
+    orientation_test=`convert ${photos} -format "%[fx:(w/h>1)?1:0]" info:`
+
+    if [ $orientation_test -eq 1 ]; then
+        # Landscape (=1)
+        resolution=2048X
+    else
+        # Portrait or square (=0)
+        resolution=X2048
+    fi
+    (cd $input && pr_utility_shrink -i ./* -o $output -r $resolution)
+done
