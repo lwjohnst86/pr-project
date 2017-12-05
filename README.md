@@ -46,9 +46,7 @@ proofs before sending to client for them to choose their picks.
 photos (based on which folder the photo is found in). **Note** that the images
 *must* be found in one of the corner folders the `Photos/final-choice/full-res/`
 and that the `logo.png` *must* be found in the `Photos/logo/` folder.
-- `pr_move_to_socialmedia`: Move the photographers chosen photos (from the
-`choice/` or `selection/` photos) into the master company folder for
-branding/marketing purposes. <!-- TODO confirm this -->
+- `pr_social_media_shrink`: Shrink photos into social media (Instagram) size. 
 - `pr_client_finished`: Once the contract has been completed, package and
 compress the client folder to archive.
 
