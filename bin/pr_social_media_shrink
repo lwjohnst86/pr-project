@@ -26,6 +26,11 @@ if [ ! -d $output ]; then
     mkdir $output
 fi
 
+if [ ! "$(ls -A $input)" ]; then
+    echo "$input folder is empty. Please add photos to shrink."
+    exit 1
+fi
+
 for photos in $input/*
 do
     # test if landscape (=1) or portrait/square (=0)
@@ -38,5 +43,5 @@ do
         # Portrait or square (=0)
         resolution=X2048
     fi
-    (cd $input && pr_utility_shrink -i ./* -o $output -r $resolution)
+    mogrify -path $output -resize $resolution $photos
 done
