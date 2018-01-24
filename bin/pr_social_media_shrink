@@ -43,5 +43,5 @@ do
         # Portrait or square (=0)
         resolution=X2048
     fi
-    mogrify -path $output -resize $resolution $photos
+    mogrify -path $output -strip -interlace Plane -quality 92% -gaussian-blur 0.05 -resize $resolution $photos
 done
